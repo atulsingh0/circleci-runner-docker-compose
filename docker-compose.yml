@@ -1,8 +1,9 @@
 services:
   testing:
-    image: runner:compose
+    image: runner:2
+    hostname: $CIRCLECI_RUNNER_NAME
     environment:
-      - CIRCLECI_RUNNER_NAME=testing
+      - CIRCLECI_RUNNER_NAME=atul-mrunner-test
     env_file:
       - path: "./runner-token.env"
         required: true
